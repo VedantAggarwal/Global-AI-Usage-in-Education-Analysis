@@ -6,3 +6,7 @@ paths:
 files:
   raw_dataset: ai_education_usage_global
   processed_dataset: ai_education_usage_global_processed
+  tool_preference_year: insights/AI Tool Preference by Year
+  tool_preference_country: insights/AI Tool Preference by Country
+  ai_usage_yearly: plotting/Yearly AI Usage Summary
+  structural_summary_country: plotting/Country wise Structural Summary
