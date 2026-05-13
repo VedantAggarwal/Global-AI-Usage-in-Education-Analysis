@@ -1,0 +1,7 @@
+paths:
+  raw_data: data/raw
+  processed_data: data/processed
+  interim_data: data/interim
+  figures: reports/figures
+files:
+  raw_dataset: ai_education_usage_global
