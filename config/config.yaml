@@ -5,3 +5,4 @@ paths:
   figures: reports/figures
 files:
   raw_dataset: ai_education_usage_global
+  processed_dataset: ai_education_usage_global_processed
