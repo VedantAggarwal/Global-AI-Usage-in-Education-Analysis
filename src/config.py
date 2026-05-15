@@ -47,17 +47,14 @@ def save_config(config, config_name="config.yaml"):
         yaml.dump(config, file, sort_keys=False)
 
 
-def update_config(section, key, value, config_name="config.yaml"):
+def update_config(key_path, value, config_name="config.yaml"):
     """
     Update a specific configuration value.
 
     Parameters
     ----------
-    section : str
-        Top-level section in config file.
-
-    key : str
-        Key inside the section.
+    key_path : str
+        Configuration of the key using dot notation.
 
     value : any
         New value to assign.
@@ -68,11 +65,16 @@ def update_config(section, key, value, config_name="config.yaml"):
 
     config = load_config(config_name)
 
-    if section not in config:
-        config[section] = {}
+    keys = key_path.split(".")
+    temp = config
 
-    config[section][key] = value
+    for key in keys[:-1]:
+        if key not in temp or not isinstance(temp[key], dict):
+            temp[key] = {}
+        temp = temp[key]
+
+    temp[keys[-1]] = value
 
     save_config(config, config_name)
 
-    print(f"Updated [{section}] -> {key}: {value}")
+    print(f"Updated [{key_path}] -> {value}")
