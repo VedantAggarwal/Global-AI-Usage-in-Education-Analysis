@@ -73,7 +73,7 @@ GLOBAL-AI-USAGE-IN-EDUCATION/
 │   └── data_io.py
 │
 ├── config/
-│   └── 01_data_cleaning.ipynb
+│   └── config.yaml
 │
 ├── .gitignore
 ├── README.md
